@@ -1,0 +1,158 @@
+body {
+    margin: 0px;
+}
+
+.title {
+    margin-left: 2vh;
+    font-size: 3.4vh;
+}
+
+.nav {
+    background-color: rgb(149, 151, 151);
+    color: aliceblue;
+    grid-area: nav;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px
+}
+
+.filtros {
+    background-color: rgb(212, 208, 208);
+    padding: 10px;
+    grid-area: filtros;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.filtros select {
+    width: 200px;
+}
+
+.main {
+    padding: 10px;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(212, 208, 208);
+    border-radius: 2px;
+    box-shadow: 3px 8px 7px #888888;
+    margin: 0 3vh 3vh 0;
+}
+
+.card img {
+    width: 100%;
+
+}
+
+.card button {
+    width: 40%;
+    background-color: rgb(214, 217, 218);
+    color: gray;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 1vh;
+}
+
+.paginador {
+    background-color: rgb(214, 217, 218);
+    padding: 10px;
+    grid-area: paginador;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding-left: 12vw;
+}
+
+.paginador button {
+    background-color: rgb(212, 208, 208);
+    border: none;
+    color: aliceblue;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+
+.footer {
+    background-color: rgb(149, 151, 151);
+    ;
+    color: aliceblue;
+    padding: 10px;
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu {
+    display: none;
+}
+
+.grid {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        'nav'
+        'filtros'
+        'main'
+        'paginador'
+        'footer';
+}
+
+@media (min-width: 576px) {
+    .grid {
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            'nav filtros'
+            'nav main'
+            'footer paginador';
+    }
+
+    .main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .fa-bars {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        padding-right: 20px;
+        line-height: 45px;
+    }
+
+    .paginador button {
+        height: 6vh;
+        margin-top: 2vh;
+    }
+}
